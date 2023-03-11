@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Header Section</title>
+	<!-- Import Bootstrap CSS -->
+    
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&family=Maven+Pro&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+</head>
+<style>
+  #navHeader {
+      font-weight: bolder;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-family: 'Maven Pro', sans-serif;
+
+
+  }
+/* 
+  .carousel-inner {
+      height: 400px;
+      margin-top: -30px;
+      font-family: 'Josefin Sans', sans-serif;
+
+  }
+
+  .about {
+      display: flex;
+      justify-content: center;
+      font-family: 'Raleway', sans-serif;
+      padding-top: 50px;
+      font-size: bolder;
+
+  }
+
+  .us {
+      color: rgb(25, 135, 84);
+  }
+
+  .para {
+      display: flex;
+      justify-content: center;
+
+      padding-top: 40px;
+      margin-left: 300px;
+      margin-right: 300px;
+  }
+
+  .read {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgb(25, 135, 84);
+      color: white;
+      background-color: rgb(25, 135, 84);
+      border-radius: 5px;
+      height: 50px;
+      font: bold;
+      margin-top: 50px;
+      margin-left: 500px;
+      padding: 10px;
+
+  }
+
+  .read :hover {
+      cursor: pointer;
+      background-color: rgb(19, 104, 64);
+  }
+
+  .cards {
+      display: flex;
+      margin-top: 40px;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Josefin Sans', sans-serif;
+      border: none;
+      outline: none;
+
+  }
+
+  .card :hover {
+      padding: 20px;
+      cursor: pointer;
+      transition: 1s;
+  } */
+
+  .navbarbtn li:hover{
+      color: green;
+
+  }
+  </style>
+<body>
+  <header id="navHeader"
+  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+  <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img src="media/Logo.jpeg" height="55" width="210" alt="">
+  </a>
+  <div class="navbarbtn">
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-4 link-secondary active" aria-current="page" >Home</a></li>
+
+          
+          <li><a href="products" class="nav-link px-4 link-dark " >Products</a></li>
+          <li><a href="about" class="nav-link px-4 link-dark">About</a></li>
+          <li><a href="#" class="nav-link px-4 link-dark">Contact Us</a></li>
+      </ul>
+  </div>
+
+  <div class="col-md-3 text-end">
+      <a href="/login"> <button  type="button" class="btn btn-outline-success me-2">Login</button></a>
+     <a  href="/signup"> <button type="button" class="btn btn-outline-success">Sign-up</button></a>
+  </div>
+</header>
