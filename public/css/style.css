@@ -1,0 +1,232 @@
+
+#navHeader {
+    font-weight: bolder;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: 'Maven Pro', sans-serif;
+    
+
+}
+
+.carousel-inner {
+    height: 400px;
+    margin-top: -30px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+.abt{
+  margin-top : -33px;
+}
+.about {
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 50px;
+    font-size: bolder;
+
+}
+
+.us {
+    color: rgb(25, 135, 84);
+}
+
+.para {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 40px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(25, 135, 84);
+    color: white;
+    background-color: rgb(25, 135, 84);
+    border-radius: 5px;
+    height: 50px;
+    font: bold;
+    margin-top: 50px;
+    margin-left: 500px;
+    padding: 10px;
+
+}
+
+.read :hover {
+    cursor: pointer;
+    background-color: rgb(19, 104, 64);
+}
+
+.cards {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    outline: none;
+
+}
+
+/* .card :hover {
+    padding: 20px;
+    cursor: pointer;
+    transition: 1s;
+}  */
+
+.navbarbtn li:hover{
+    color: green;
+
+}
+
+
+.tanki{
+    font-family: 'Golos Text', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.rabta{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.rabta .maal{
+    max-width: 800px;
+    text-align: center;
+}
+.rabta .rabta h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #eae0e0;
+}
+.rabta .rabta p{
+    
+    font-weight: 300;
+    color: #eae0e0;
+}
+
+.tanki{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    color: #03010F;
+}
+
+.tanki .rabtaM{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #03010F;
+}
+.tanki .rabtaM .box{
+    position: relative;
+    padding: 20px 0px;
+    display: flex;
+    color: #03010F;
+}
+
+.tanki .rabtaM .dabba .alfaaz{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    flex-direction: column;
+    font-weight: 300;
+    color: #03010F;
+}
+.tanki .rabtaM .dabba .alfaaz h3{
+    font-weight: 500;
+    color: #198754;
+
+}
+.rabtaForm{
+    width: 40%;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #03010F;
+    border-radius: 15px;
+}
+.rabtaForm h2 {
+    font-size: 30px;
+    color: #198754;
+    font-weight: 500;
+
+}
+.rabtaForm .andarDabba{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.rabtaForm .andarDabba input,
+.rabtaForm .andarDabba textarea{
+    width: 100%;
+    padding: 5px 0px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+
+}
+.rabtaForm .andarDabba span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0px;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.rabtaForm .andarDabba input:focus ~ span,
+.rabtaForm .andarDabba input:valid ~ span,
+.rabtaForm .andarDabba textarea:focus ~ span,
+.rabtaForm .andarDabba textarea:valid ~ span{
+   color: #198754;
+   font: 12px;
+   transform: translateY(-25px);
+}
+
+.rabta
+{
+    background-size: cover;
+    
+}
+
+
+
+
+@media (max-width: 991px){
+    .rabta{
+        padding: 50px;
+
+    }
+    .tanki{
+        flex-direction: column;
+    }
+    .tanki .rabtaM{
+        margin-bottom: 40px;
+    }
+    .tanki .rabtaM{
+        width: 100%;
+    }
+    .tanki .rabtaForm{
+        width: 100%;
+    }
+}
+
+

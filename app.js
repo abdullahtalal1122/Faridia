@@ -1,16 +1,19 @@
+// modules 
 const bodyParser = require("body-parser");
 const express = require("express");
 const ejs = require("ejs");
 const app = express();
 
+
 app.use(bodyParser.urlencoded({extended: true}));
  app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
+
+// mongoDB connection
+
 const mongoose = require('mongoose');
-
 mongoose.connect('mongodb://127.0.0.1:27017/Products', { useNewUrlParser: true, useUnifiedTopology: true });
-
 const productSchema = new mongoose.Schema({
   name: String,
   size: String,
@@ -18,18 +21,17 @@ const productSchema = new mongoose.Schema({
   image: String,
   category : String 
 });
-
 const Products = mongoose.model('products', productSchema);
 
 
 
-
+// Products page
 
 let productArray = [];
 
 app.post("/products", async (req, res) => {
   let category = req.body.category;
-  console.log(category); // add this line to check if category is received
+  // add this line to check if category is received
 
   category = category.charAt(0).toUpperCase() + category.slice(1);
 
@@ -42,29 +44,69 @@ app.post("/products", async (req, res) => {
 });
 
 
+// Login authentication JUGAAR 
 
 
-
-app.get("/compose" ,(req,res) => {
+ app.post("/login", (req, res) => {
   
-  console.log("test");
+   const { username, password } = req.body;
 
-  res.render("compose");
-})
+   if (username === "admin" && password === "123") {
+    // set the user object in the session
+    res.render("compose");
+  } else {
+    res.redirect("/");
+  }
+});
 
-app.post("/compose", (req, res) => {
+// Part of compose section only for Admin
+
+app.post('/updateproduct', (req, res) => {
+  let updateFields = {};
   
+  if (req.body.name) {
+    updateFields.name = req.body.name;
+  }
+  
+  if (req.body.size) {
+    updateFields.size = req.body.size;
+  }
+  
+  if (req.body.price) {
+    updateFields.price = Number(req.body.price);
+  }
+  
+  if (req.body.image) {
+    updateFields.image = req.body.image;
+  }
+  
+  if (req.body.category) {
+    updateFields.category = req.body.category.charAt(0).toUpperCase() + req.body.category.slice(1);
+  }
+  
+  Products.findByIdAndUpdate(req.body.id, { $set: updateFields })
+    .then(() => {
+      console.log('Product updated');
+      res.redirect('/');
+    })
+    .catch(err => console.log(err));
+});
+
+// part of compose section
+
+app.post("/addproduct",(req,res)=>{
+
+   
   let type = req.body.category;
-  console.log(type);
+ 
 
   type = type.charAt(0).toUpperCase() + type.slice(1);
-console.log(type);
   
   const newProduct = new Products({
     name: req.body.name,
     size: req.body.size,
     price: Number(req.body.price),
-    image: req.body.image,
+    image: "media/" + req.body.image,
     category: type
   });
 
@@ -74,7 +116,37 @@ console.log(type);
       res.redirect("/compose");
     })
     .catch(err => console.log(err));
+
+
+  res.redirect("/products");
 });
+
+
+
+
+app.post('/compose', (req, res) => {
+  const action = req.body.action;
+  if (action === 'addproduct') {
+    res.render('addproduct');
+  } else if (action === 'deleteproduct') {
+    res.render('deleteproduct');
+  } else if (action === 'updateproduct') {
+    res.render('updateproduct');
+  }
+});
+
+app.post("/deleteproduct", (req, res) => {
+  Products.findByIdAndDelete(req.body.id)
+    .then(() => {
+      console.log('Product deleted');
+      res.redirect("/");
+    })
+    .catch(err => console.log(err));
+});
+
+
+
+
 
 
 
@@ -93,6 +165,10 @@ app.get("/login" , (req,res) => {
   res.render("login");
 })
 
+app.get("/contact" , (req,res) =>{
+
+  res.render("contact");
+})
 
 app.get("/signup" , (req,res) => {
   res.render("signup");
